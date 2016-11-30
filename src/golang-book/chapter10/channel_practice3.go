@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"time"
 )
 
 type HomePageSize struct {
@@ -56,6 +57,14 @@ func main() {
 	}
 
 	fmt.Println("The biggest home page:", biggest.URL)
+
+	Sleep(time.Second * 2)
 }
 
 // The biggest home page: http://www.amazon.com
+
+// Own Sleep function using time.After exercise
+func Sleep(seconds time.Duration) {
+	c := <-time.After(seconds)
+	fmt.Println("time has passed:", c)
+}
