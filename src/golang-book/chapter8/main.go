@@ -79,8 +79,9 @@ func main() {
 	fmt.Println(s)
 }
 
+//create hasher
 func hashPracticeOne() {
-	//create hasher
+
 	h := crc32.NewIEEE()
 	//write data to hasher
 	h.Write([]byte("test"))
